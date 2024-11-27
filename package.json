@@ -1,0 +1,28 @@
+{
+  "name": "meditation-app",
+  "version": "1.0.0",
+  "description": "This is an app of recording meditation process",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ziqiao-git/meditation-app.git"
+  },
+  "keywords": [
+    "meditation-app"
+  ],
+  "author": "Ziqiao Xi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ziqiao-git/meditation-app/issues"
+  },
+  "homepage": "https://github.com/Ziqiao-git/meditation-app#readme",
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}
