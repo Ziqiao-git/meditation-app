@@ -4,7 +4,8 @@
   "description": "This is an app of recording meditation process",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon /Users/xiziqiao/Documents/Meditation-app/src/app.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,15 @@
   },
   "homepage": "https://github.com/Ziqiao-git/meditation-app#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^3.1.10",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
+    "mysql2": "^3.11.5",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }

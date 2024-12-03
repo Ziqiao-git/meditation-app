@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <style>
+        .button-style {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button-style:hover {background-color: #3e8e41}
+
+        .button-style:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello <%= locals.text %> World</h1>
+    <!-- Conditionally display Login or Logout button -->
+    <% if (user) { %>
+        <!-- If user is logged in, show Logout button -->
+        <a href="/users/logout" class="button-style">Logout</a>
+    <% } else { %>
+        <!-- If no user is logged in, show Login button -->
+        <a href="/users/login" class="button-style">Login</a>
+    <% } %>
+</body>
+</html>
