@@ -1,11 +1,14 @@
 const express = require('express');
 const session = require('express-session');
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 
 const app = express();
 app.set('view engine','ejs')
+
+app.use(express.static('public'));
 // Middleware for reading request body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -27,8 +30,10 @@ app.get('/',(req,res)=> {
 })
 
 const userRouter = require("./routes/users")
+const blogRouter = require("./routes/blog")
 
 app.use('/users',userRouter)
+app.use('/blog',blogRouter)
 
 app.listen(3000, () => {
   console.log('Server started on port 3000');

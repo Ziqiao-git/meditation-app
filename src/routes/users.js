@@ -1,90 +1,80 @@
-const express = require('express')
-const router = express.Router()
-const db = require('../config/database');
+const express = require('express');
+const router = express.Router();
+const { Op } = require('sequelize');  // Add this line
+const sequelize = require('../config/database'); 
+const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 
 // Root route for users
-router.get("/", (req, res) => {
-    res.send("Welcome to the Users page!");
-});
+// router.get("/", (req, res) => {
+//     res.send("Welcome to the Users page!");
+// });
 
 // Register route
 router
     .get("/register", (req, res) => {
-    res.render("register");
+    res.render("users/register");
 })  
     .post("/register", async(req, res) => {
     const { username, email, password } = req.body;
 
     try {
-        // Hash the password
-        const saltRounds = 10; // Cost factor for hashing the password
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
-    
-        // Check if username or email already exists in the database
-        const checkSql = 'SELECT * FROM users WHERE username = ? OR email = ?';
-        db.query(checkSql, [username, email], (checkErr, results) => {
-            if (checkErr) {
-                console.error('Error in the database operation', checkErr);
-                return res.status(500).send('Database error while checking for existing user.');
+        // Check if username or email already exists
+        const existingUser = await User.findOne({
+            where: {
+                [Op.or]: [
+                    { username: username },
+                    { email: email }
+                ]
             }
-    
-            if (results.length > 0) {
-                // If a matching user is found
-                return res.status(400).send('Username or email already exists.');
-            }
-    
-            // Insert the new user into the database
-            const insertSql = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
-            db.query(insertSql, [username, email, hashedPassword], (insertErr, result) => {
-                if (insertErr) {
-                    console.error('Error in the database operation', insertErr);
-                    return res.status(500).send('Failed to register user.');
-                }
-                
-            });
-            req.session.user = { name: email };
-                res.send(`User registered successfully! Username: ${username}, Email: ${email}`);
         });
+        if (existingUser) {
+            return res.status(400).send('Username or email already exists.');
+        }
+        // Hash the password
+        const salt = await bcrypt.genSalt(10);  // Generate a salt
+        const hashedPassword = await bcrypt.hash(password, salt);  // Hash the password with the salt
+ 
+        // Create a new user
+        const user = await User.create({
+            username,
+            email,
+            password: hashedPassword
+        });
+
+        req.session.user = { id: user.id, name: user.username };
+        res.send(`User registered successfully! Username: ${user.username}, Email: ${user.email}`);
     } catch (err) {
-        console.error('Error while hashing the password', err);
+        console.error('Error while registering user:', err);
         res.status(500).send('Failed to register user.');
     }
 });
 
 // Login route
 router.get("/login", (req, res) => {
-    res.render("login");
+    res.render("users/login");
 })
-.post("/login", (req, res) => {
+.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
-    // Check if the email exists in the database
-    const sql = 'SELECT * FROM users WHERE email = ?';
-    db.query(sql, [email], async (err, results) => {
-        if (err) {
-            console.error('Database error', err);
-            return res.status(500).send('An error occurred. Please try again.');
-        }
-
-        if (results.length === 0) {
-            // No user with the given email
+    try {
+        const user = await User.findOne({ where: { email } });
+        if (!user) {
             return res.status(400).send('Invalid email or password.');
         }
 
-        const user = results[0]; // Get the user record
-
-        // Compare the entered password with the hashed password in the database
         const isMatch = await bcrypt.compare(password, user.password);
-
         if (!isMatch) {
             return res.status(400).send('Invalid email or password.');
         }
-        req.session.user = { name: email };
-        // If the credentials are correct, log the user in
-        // res.send(`Welcome back, ${user.username}!`);
-        res.redirect('/');
-    });
+
+        req.session.user = { id: user.id, name: user.username };
+        res.redirect('/blog');
+    } catch (err) {
+        console.error('Login error:', err);
+        res.status(500).send('An error occurred. Please try again.');
+    }
+    
 });
 
 // Logout route

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Posts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .create-post-btn {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .create-post-btn:hover {
+            background-color: #0052a3;
+        }
+        .post {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .post:last-child {
+            border-bottom: none;
+        }
+        .title {
+            font-size: 24px;
+            color: #333;
+        }
+        .summary {
+            font-size: 16px;
+            color: #666;
+        }
+        .date {
+            font-size: 14px;
+            color: #999;
+        }
+        .read-more {
+            color: #0066cc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>My Posts</h1>
+            <a href="/blog/new" class="create-post-btn">Create New Post</a>
+        </div>
+        <% if (posts.length) { %>
+            <% posts.forEach(post => { %>
+                <div class="post">
+                    <h2 class="title"><%= post.title %></h2>
+                    <p class="summary"><%= post.content %></p>
+                    <p class="date">Posted on <%= post.created_at.toDateString() %></p>
+                    <a href="/blog/<%= post.id %>" class="read-more">Read More</a>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>You have not posted anything yet.</p>
+        <% } %>
+    </div>
+</body>
+</html>
