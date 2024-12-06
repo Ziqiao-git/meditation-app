@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapsApiKey %>&callback=initMap"></script>
     <title>Blog Post</title>
     <style>
         body {
@@ -68,6 +69,28 @@
             border-top: 1px solid #eee;
             color: #666;
         }
+        .map-container {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .location-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
@@ -94,8 +117,35 @@
 
             <% if (post.latitude && post.longitude) { %>
                 <div class="location-info">
-                    <p>📍 Location: <%= post.latitude %>, <%= post.longitude %></p>
+                    <p>📍 Location</p>
                 </div>
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+                <script>
+                    function initMap() {
+                        const location = {
+                            lat: <%= post.latitude %>,
+                            lng: <%= post.longitude %>
+                        };
+                        
+                        const map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 15,
+                            center: location,
+                            mapTypeControl: false,
+                            streetViewControl: false,
+                            fullscreenControl: true
+                        });
+
+                        new google.maps.Marker({
+                            position: location,
+                            map: map
+                        });
+                    }
+
+                    // Initialize the map when the page loads
+                    window.onload = initMap;
+                </script>
             <% } %>
 
             <a href="/blog" class="back-button">Back to Posts</a>

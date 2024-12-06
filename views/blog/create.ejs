@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://maps.googleapis.com">
+    <link rel="preconnect" href="https://maps.gstatic.com">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapsApiKey %>&callback=initMap"></script>
     <title>Create New Post</title>
     <style>
         body {
@@ -95,6 +98,25 @@
             object-fit: cover;
             border-radius: 4px;
         }
+        .map-container {
+        display: none;  /* Hidden by default */
+        margin-top: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+        }
+
+        #map {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+        }
+
+        .remove-location {
+            color: #ff4444;
+            cursor: pointer;
+            margin-left: 10px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -120,15 +142,38 @@
                     <div class="preview-images" id="imagePreview"></div>
                 </div>
             </div>
-
+            
+            <div class="form-group">
+                <div class="location-group">
+                    <button type="button" class="location-btn" onclick="getLocation()">
+                        📍 Add Location
+                    </button>
+                    <span id="locationDisplay" class="location-display"></span>
+                    <span id="removeLocation" class="remove-location" onclick="removeLocation()">✕</span>
+                    <input type="hidden" name="latitude" id="latitude">
+                    <input type="hidden" name="longitude" id="longitude">
+                </div>
+                <div id="mapContainer" class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
             <div class="button-group">
                 <a href="/posts" class="cancel-btn">Cancel</a>
                 <button type="submit" class="submit-btn">Create Post</button>
             </div>
         </form>
+        
     </div>
 
     <script>
+        let map;
+        let marker;
+        let geocoder;
+
+        function initializeServices() {
+            geocoder = new google.maps.Geocoder();
+        }
+
         function previewImages(event) {
             const preview = document.getElementById('imagePreview');
             preview.innerHTML = '';
@@ -158,6 +203,136 @@
                 }
                 reader.readAsDataURL(file);
             }
+        }
+
+        function initMap(lat, lng) {
+            const location = { lat: lat, lng: lng };
+            
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: location,
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: false
+            });
+
+            marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                draggable: true
+            });
+
+            google.maps.event.addListener(marker, 'dragend', function() {
+                const position = marker.getPosition();
+                updateLocation(position.lat(), position.lng());
+            });
+        }
+
+        function getLocation() {
+            // Show loading indicator
+            document.getElementById('locationDisplay').textContent = '📍 Getting location...';
+            
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    async function(position) {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        
+                        // Update UI first
+                        document.getElementById('latitude').value = lat;
+                        document.getElementById('longitude').value = lng;
+                        document.getElementById('mapContainer').style.display = 'block';
+                        document.getElementById('removeLocation').style.display = 'inline';
+                        
+                        // Initialize map if needed
+                        if (!map) {
+                            initMap(lat, lng);
+                        } else {
+                            const newLocation = new google.maps.LatLng(lat, lng);
+                            map.setCenter(newLocation);
+                            marker.setPosition(newLocation);
+                        }
+                        
+                        // Get address in background
+                        try {
+                            const result = await geocodeLocation(lat, lng);
+                            document.getElementById('locationDisplay').textContent = 
+                                `📍 ${result || 'Location added'}`;
+                        } catch (error) {
+                            document.getElementById('locationDisplay').textContent = '📍 Location added';
+                        }
+                    },
+                    function(error) {
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                alert("Please allow location access to add your location.");
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                alert("Location information unavailable.");
+                                break;
+                            case error.TIMEOUT:
+                                alert("Location request timed out.");
+                                break;
+                            default:
+                                alert("An unknown error occurred.");
+                                break;
+                        }
+                        document.getElementById('locationDisplay').textContent = '';
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported by this browser.");
+                document.getElementById('locationDisplay').textContent = '';
+            }
+        }
+
+        async function geocodeLocation(lat, lng) {
+            if (!geocoder) return null;
+            
+            try {
+                const response = await geocoder.geocode({
+                    location: { lat: parseFloat(lat), lng: parseFloat(lng) }
+                });
+                
+                if (response.results?.[0]) {
+                    return response.results[0].formatted_address;
+                }
+            } catch (error) {
+                console.error('Geocoding failed:', error);
+            }
+            return null;
+        }
+
+        async function updateLocation(lat, lng) {
+            // Update hidden inputs
+            document.getElementById('latitude').value = lat;
+            document.getElementById('longitude').value = lng;
+            
+            try {
+                const result = await geocodeLocation(lat, lng);
+                document.getElementById('locationDisplay').textContent = 
+                    `📍 ${result || 'Location added'}`;
+            } catch (error) {
+                document.getElementById('locationDisplay').textContent = '📍 Location added';
+            }
+        }
+
+        function removeLocation() {
+            // Clear inputs
+            document.getElementById('latitude').value = '';
+            document.getElementById('longitude').value = '';
+            document.getElementById('locationDisplay').textContent = '';
+            
+            // Hide map and remove button
+            document.getElementById('mapContainer').style.display = 'none';
+            document.getElementById('removeLocation').style.display = 'none';
+            
+            // Clear map and marker
+            if (marker) {
+                marker.setMap(null);
+            }
+            marker = null;
+            map = null;
         }
     </script>
 </body>

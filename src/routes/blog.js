@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const router = express.Router()
 const multer = require('multer');
@@ -114,7 +115,8 @@ router.get("/", async (req, res) => {
 
         // Send response
         res.render('blog/post', { 
-            post: postWithImages
+            post: postWithImages,
+            googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
         })
         
 
@@ -138,7 +140,9 @@ router.get("/new", async (req, res) => {
         return res.status(401).send("User not logged in.");
     }
 
-    res.render('../views/blog/create'); // You'll need to create this view
+    res.render('../views/blog/create', {
+        googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
+    });
 });
 
 // Get a specific post
@@ -155,7 +159,10 @@ router.get("/:id", async (req, res) => {
             return res.status(404).send('Post not found');
         }
 
-        res.render('blog/post', { post: post });
+        res.render('blog/post', { 
+            post: post,
+            googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY  
+        });
     } catch (err) {
         console.error("Failed to retrieve post:", err);
         res.status(500).send("Error retrieving post");
