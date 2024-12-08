@@ -144,6 +144,39 @@ router.get("/new", async (req, res) => {
         googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
     });
 });
+//explore page
+router.get("/explore", async (req, res) => {
+    console.log("Hitting explore route");
+    try {
+        const posts = await Post.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'] // Only get the username
+                },
+                {
+                    model: Image
+                }
+            ],
+            order: [['created_at', 'DESC']] // Most recent first
+        });
+        console.log("Posts found:", posts.length);  // Add this
+        console.log("First post:", posts[0]);  // Add this to see post structure
+        res.render('../views/blog/explore', {
+            posts: posts,
+            currentUser: req.session.user || null,
+            googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
+        });
+        console.log("Rendering with data:", {
+            postsLength: posts.length,
+            hasCurrentUser: !!req.session.user,
+            hasApiKey: !!process.env.GOOGLE_MAPS_API_KEY
+        });
+    } catch (err) {
+        console.error("Failed to retrieve posts:", err);
+        res.status(500).send("Error retrieving posts");
+    }
+});
 
 // Get a specific post
 router.get("/:id", async (req, res) => {
@@ -168,5 +201,7 @@ router.get("/:id", async (req, res) => {
         res.status(500).send("Error retrieving post");
     }
 });
+
+
 
 module.exports = router;

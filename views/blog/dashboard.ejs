@@ -63,13 +63,36 @@
             color: #0066cc;
             text-decoration: none;
         }
+        .header-buttons {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+        }
+
+        .explore-btn {
+            background-color: #28a745; /* Different color to distinguish from create button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .explore-btn:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>My Posts</h1>
-            <a href="/blog/new" class="create-post-btn">Create New Post</a>
+            <div class="header-buttons">
+                <a href="/blog/explore" class="explore-btn">Explore</a>
+                <a href="/blog/new" class="create-post-btn">Create New Post</a>
+            </div>
         </div>
         <% if (posts.length) { %>
             <% posts.forEach(post => { %>
