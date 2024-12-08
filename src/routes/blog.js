@@ -146,7 +146,6 @@ router.get("/new", async (req, res) => {
 });
 //explore page
 router.get("/explore", async (req, res) => {
-    console.log("Hitting explore route");
     try {
         const posts = await Post.findAll({
             include: [
@@ -160,17 +159,10 @@ router.get("/explore", async (req, res) => {
             ],
             order: [['created_at', 'DESC']] // Most recent first
         });
-        console.log("Posts found:", posts.length);  // Add this
-        console.log("First post:", posts[0]);  // Add this to see post structure
         res.render('../views/blog/explore', {
             posts: posts,
             currentUser: req.session.user || null,
             googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
-        });
-        console.log("Rendering with data:", {
-            postsLength: posts.length,
-            hasCurrentUser: !!req.session.user,
-            hasApiKey: !!process.env.GOOGLE_MAPS_API_KEY
         });
     } catch (err) {
         console.error("Failed to retrieve posts:", err);

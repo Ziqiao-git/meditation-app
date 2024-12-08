@@ -29,7 +29,12 @@ router
             }
         });
         if (existingUser) {
-            return res.status(400).send('Username or email already exists.');
+            return res.send(`
+                <script>
+                    alert('Username or email already exists.');
+                    window.location.href = '/users/register';  // Go back to register page
+                </script>
+            `);
         }
         // Hash the password
         const salt = await bcrypt.genSalt(10);  // Generate a salt
@@ -43,7 +48,13 @@ router
         });
 
         req.session.user = { id: user.id, name: user.username };
-        res.send(`User registered successfully! Username: ${user.username}, Email: ${user.email}`);
+        res.send(`
+            <script>
+                alert("User registered successfully! Username: ${user.username}, Email: ${user.email}");
+                window.location.href = '/blog';  // Redirect to dashboard
+            </script>
+        `);
+
     } catch (err) {
         console.error('Error while registering user:', err);
         res.status(500).send('Failed to register user.');

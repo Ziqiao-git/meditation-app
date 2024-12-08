@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-    <h1>Hello <%= locals.text %> World</h1>
+    <h1>Med World</h1>
     <!-- Conditionally display Login or Logout button -->
     <% if (user) { %>
         <!-- If user is logged in, show Logout button -->
@@ -38,6 +38,7 @@
     <% } else { %>
         <!-- If no user is logged in, show Login button -->
         <a href="/users/login" class="button-style">Login</a>
+        <a href="/users/register" class="button-style">Register</a>
     <% } %>
 </body>
 </html>
