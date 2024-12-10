@@ -177,7 +177,15 @@ router.get("/:id", async (req, res) => {
     try {
         const post = await Post.findOne({
             where: { id: postId },
-            include: [Image]  // Include associated images
+            include: [Image,
+                {
+                    model: Comment,
+                    include: [{
+                        model: User,
+                        attributes: ['username']
+                    }]
+                }
+            ]  // Include associated images and comments
         });
 
         if (!post) {
@@ -186,6 +194,7 @@ router.get("/:id", async (req, res) => {
 
         res.render('blog/post', { 
             post: post,
+            userId: req.session.user?.id,
             googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY  
         });
     } catch (err) {

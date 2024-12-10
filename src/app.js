@@ -26,14 +26,17 @@ app.use(session({
 
 app.get('/',(req,res)=> {
     console.log('Index page')
-    res.render("index",{user: req.session.user,text: "My"})
+    res.render("index",{user: req.session.user})
 })
 
 const userRouter = require("./routes/users")
 const blogRouter = require("./routes/blog")
+const commentRouter = require("./routes/comment")
 
 app.use('/users',userRouter)
 app.use('/blog',blogRouter)
+app.use('/comment',commentRouter)
+
 
 app.listen(3000, () => {
   console.log('Server started on port 3000');
