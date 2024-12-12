@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon /Users/xiziqiao/Documents/Meditation-app/src/app.js"
+    "devStart": "nodemon /Users/xiziqiao/Documents/Meditation-app/src/app.js",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
   },
   "repository": {
     "type": "git",
@@ -21,18 +23,32 @@
   },
   "homepage": "https://github.com/Ziqiao-git/meditation-app#readme",
   "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@tiptap/extension-image": "^2.10.3",
+    "@tiptap/extension-placeholder": "^2.10.3",
+    "@tiptap/react": "^2.10.3",
+    "@tiptap/starter-kit": "^2.10.3",
+    "babel-loader": "^9.2.1",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
+    "framer-motion": "^11.14.1",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.11.5",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^6.37.5"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.2",
+    "sequelize": "^6.37.5",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
     "nodemon": "^3.1.7"
   }
 }

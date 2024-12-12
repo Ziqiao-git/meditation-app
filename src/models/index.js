@@ -37,7 +37,13 @@ function setupAssociations() {
             allowNull: false
         }
     });
-
+    User.hasMany(Comment, {                   
+        foreignKey: {
+            name: 'userId',
+            allowNull: false
+        },
+        onDelete: 'CASCADE'
+    });
     // User <-> Comment associations
     Comment.belongsTo(User, {
         foreignKey: {

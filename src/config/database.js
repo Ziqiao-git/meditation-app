@@ -17,7 +17,7 @@ sequelize.authenticate()
     .then(() => {
         console.log('Database connected.');
         // Add this part to sync models
-        return sequelize.sync({alter:true}); // or { force: true } for development
+        return sequelize.sync({alter:false}); // or { force: true } for development
     })
     .then(() => {
         console.log('Models synchronized with database.');

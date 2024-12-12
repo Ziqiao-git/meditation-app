@@ -19,27 +19,30 @@ router
     const { username, email, password } = req.body;
 
     try {
-        // Check if username or email already exists
-        const existingUser = await User.findOne({
-            where: {
-                [Op.or]: [
-                    { username: username },
-                    { email: email }
-                ]
-            }
+        // Check if email already exists
+        const existingEmail = await User.findOne({
+            where: { email }
         });
-        if (existingUser) {
-            return res.send(`
-                <script>
-                    alert('Username or email already exists.');
-                    window.location.href = '/users/register';  // Go back to register page
-                </script>
-            `);
+        if (existingEmail) {
+            return res.status(400).json({ 
+                message: 'Email already registered' 
+            });
         }
+
+        // Check if username already exists
+        const existingUsername = await User.findOne({
+            where: { username }
+        });
+        if (existingUsername) {
+            return res.status(400).json({ 
+                message: 'Username already taken' 
+            });
+        }
+
         // Hash the password
-        const salt = await bcrypt.genSalt(10);  // Generate a salt
-        const hashedPassword = await bcrypt.hash(password, salt);  // Hash the password with the salt
- 
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
         // Create a new user
         const user = await User.create({
             username,
@@ -48,16 +51,11 @@ router
         });
 
         req.session.user = { id: user.id, name: user.username };
-        res.send(`
-            <script>
-                alert("User registered successfully! Username: ${user.username}, Email: ${user.email}");
-                window.location.href = '/blog';  // Redirect to dashboard
-            </script>
-        `);
+        res.status(201).json({ message: 'Registration successful' });
 
     } catch (err) {
-        console.error('Error while registering user:', err);
-        res.status(500).send('Failed to register user.');
+        console.error('Registration error:', err);
+        res.status(500).json({ message: 'Registration failed' });
     }
 });
 

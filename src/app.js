@@ -1,6 +1,6 @@
 const express = require('express');
 const session = require('express-session');
-
+const path = require('path');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
@@ -35,8 +35,8 @@ const commentRouter = require("./routes/comment")
 
 app.use('/users',userRouter)
 app.use('/blog',blogRouter)
-app.use('/comment',commentRouter)
-
+app.use('/comment', commentRouter)
+app.use('/dist', express.static(path.join(__dirname, 'public/dist')));
 
 app.listen(3000, () => {
   console.log('Server started on port 3000');
