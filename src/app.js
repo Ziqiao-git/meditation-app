@@ -6,7 +6,15 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 
 const app = express();
+const viewsPath = path.join(__dirname, '../views');
+app.set('views', viewsPath);
 app.set('view engine','ejs')
+
+console.log('\n=== Views Directory Configuration ===');
+console.log('Views Path:', viewsPath);
+console.log('Directory exists:', require('fs').existsSync(viewsPath));
+console.log('Directory contents:', require('fs').readdirSync(viewsPath));
+console.log('=====================================\n');
 
 app.use(express.static('public'));
 // Middleware for reading request body

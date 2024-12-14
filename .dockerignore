@@ -1,0 +1,9 @@
+# Exclude everything
+*
+
+# Include necessary files and directories
+!src/
+!package*.json
+!public/
+!.env 
+!views/

@@ -1,0 +1,13 @@
+kubectl delete deployment meditation-app
+kubectl delete pod -l app=meditation-app
+docker rmi docker.io/library/meditation-app:latest
+docker rm -f $(docker ps -a -q --filter ancestor=meditation-app:latest)
+minikube image rm docker.io/library/meditation-app:latest
+docker build --no-cache -t meditation-app:latest .
+minikube image load meditation-app:latest
+kubectl apply -f k8s/app-development.yaml
+kubectl apply -f k8s/app-service.yaml
+kubectl delete pod -l app=meditation-app
+kubectl get pods -l app=meditation-app
+kubectl port-forward service/meditation-app-service 3000:3000
+kubectl logs -f $(kubectl get pods -l app=meditation-app -o jsonpath='{.items[0].metadata.name}') | tee my_app_logs.txt

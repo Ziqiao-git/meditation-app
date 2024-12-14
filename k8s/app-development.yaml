@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meditation-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: meditation-app
+  template:
+    metadata:
+      labels:
+        app: meditation-app
+    spec:
+      containers:
+      - name: meditation-app
+        image: meditation-app:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "kubernetes"
+        - name: DB_HOST
+          value: "mysql-service"
+        volumeMounts:
+        - name: uploads
+          mountPath: /usr/src/app/public/uploads
+      volumes:
+      - name: uploads
+        persistentVolumeClaim:
+          claimName: uploads-pvc

@@ -1,0 +1,2019 @@
+
+> meditation-app@1.0.0 devStart
+> nodemon src/app.js
+
+[33m[nodemon] 3.1.7[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node src/app.js`[39m
+
+=== Views Directory Configuration ===
+Views Path: /usr/src/app/views
+Directory exists: true
+Directory contents: [ 'blog', 'index.ejs', 'users' ]
+=====================================
+
+Build timestamp: 2024-12-14T22:37:36.691Z
+
+=== Database Connection Configuration ===
+NODE_ENV: kubernetes
+DB_HOST: mysql-service
+Resolved Host: mysql-service
+Process Environment: {
+  KUBERNETES_SERVICE_PORT: '443',
+  KUBERNETES_PORT: 'tcp://10.96.0.1:443',
+  npm_config_user_agent: 'npm/10.8.2 node/v20.18.1 linux arm64 workspaces/false',
+  NODE_VERSION: '20.18.1',
+  HOSTNAME: 'meditation-app-59c8977c6-z5gvl',
+  YARN_VERSION: '1.22.22',
+  npm_node_execpath: '/usr/local/bin/node',
+  npm_config_noproxy: '',
+  HOME: '/root',
+  npm_package_json: '/usr/src/app/package.json',
+  npm_config_userconfig: '/root/.npmrc',
+  npm_config_local_prefix: '/usr/src/app',
+  MEDITATION_APP_SERVICE_PORT_3000_TCP_ADDR: '10.104.179.15',
+  COLOR: '0',
+  MEDITATION_APP_SERVICE_PORT_3000_TCP_PORT: '3000',
+  MEDITATION_APP_SERVICE_PORT_3000_TCP_PROTO: 'tcp',
+  npm_config_prefix: '/usr/local',
+  npm_config_npm_version: '10.8.2',
+  npm_config_cache: '/root/.npm',
+  KUBERNETES_PORT_443_TCP_ADDR: '10.96.0.1',
+  MYSQL_SERVICE_PORT_3306_TCP_ADDR: '10.99.60.90',
+  npm_config_node_gyp: '/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js',
+  PATH: '/usr/src/app/node_modules/.bin:/usr/src/node_modules/.bin:/usr/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+  NODE: '/usr/local/bin/node',
+  npm_package_name: 'meditation-app',
+  KUBERNETES_PORT_443_TCP_PORT: '443',
+  MYSQL_SERVICE_PORT_3306_TCP_PORT: '3306',
+  MYSQL_SERVICE_SERVICE_HOST: '10.99.60.90',
+  MYSQL_SERVICE_PORT_3306_TCP_PROTO: 'tcp',
+  MEDITATION_APP_SERVICE_PORT_3000_TCP: 'tcp://10.104.179.15:3000',
+  KUBERNETES_PORT_443_TCP_PROTO: 'tcp',
+  MEDITATION_APP_SERVICE_SERVICE_HOST: '10.104.179.15',
+  npm_lifecycle_script: 'nodemon src/app.js',
+  npm_package_version: '1.0.0',
+  npm_lifecycle_event: 'devStart',
+  MYSQL_SERVICE_SERVICE_PORT: '3306',
+  MYSQL_SERVICE_PORT: 'tcp://10.99.60.90:3306',
+  MEDITATION_APP_SERVICE_SERVICE_PORT: '3000',
+  KUBERNETES_SERVICE_PORT_HTTPS: '443',
+  MEDITATION_APP_SERVICE_PORT: 'tcp://10.104.179.15:3000',
+  KUBERNETES_PORT_443_TCP: 'tcp://10.96.0.1:443',
+  MYSQL_SERVICE_PORT_3306_TCP: 'tcp://10.99.60.90:3306',
+  npm_config_globalconfig: '/usr/local/etc/npmrc',
+  npm_config_init_module: '/root/.npm-init.js',
+  KUBERNETES_SERVICE_HOST: '10.96.0.1',
+  PWD: '/usr/src/app',
+  npm_execpath: '/usr/local/lib/node_modules/npm/bin/npm-cli.js',
+  npm_config_global_prefix: '/usr/local',
+  npm_command: 'run-script',
+  DB_HOST: 'mysql-service',
+  NODE_ENV: 'kubernetes',
+  INIT_CWD: '/usr/src/app',
+  EDITOR: 'vi'
+}
+=====================================
+
+Build timestamp: 2024-12-14T22:37:36.713Z
+
+=== Database Connection Configuration ===
+NODE_ENV: kubernetes
+DB_HOST: mysql-service
+Resolved Host: mysql-service
+Process Environment: {
+  KUBERNETES_SERVICE_PORT: '443',
+  KUBERNETES_PORT: 'tcp://10.96.0.1:443',
+  npm_config_user_agent: 'npm/10.8.2 node/v20.18.1 linux arm64 workspaces/false',
+  NODE_VERSION: '20.18.1',
+  HOSTNAME: 'meditation-app-59c8977c6-z5gvl',
+  YARN_VERSION: '1.22.22',
+  npm_node_execpath: '/usr/local/bin/node',
+  npm_config_noproxy: '',
+  HOME: '/root',
+  npm_package_json: '/usr/src/app/package.json',
+  npm_config_userconfig: '/root/.npmrc',
+  npm_config_local_prefix: '/usr/src/app',
+  MEDITATION_APP_SERVICE_PORT_3000_TCP_ADDR: '10.104.179.15',
+  COLOR: '0',
+  MEDITATION_APP_SERVICE_PORT_3000_TCP_PORT: '3000',
+  MEDITATION_APP_SERVICE_PORT_3000_TCP_PROTO: 'tcp',
+  npm_config_prefix: '/usr/local',
+  npm_config_npm_version: '10.8.2',
+  npm_config_cache: '/root/.npm',
+  KUBERNETES_PORT_443_TCP_ADDR: '10.96.0.1',
+  MYSQL_SERVICE_PORT_3306_TCP_ADDR: '10.99.60.90',
+  npm_config_node_gyp: '/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js',
+  PATH: '/usr/src/app/node_modules/.bin:/usr/src/node_modules/.bin:/usr/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+  NODE: '/usr/local/bin/node',
+  npm_package_name: 'meditation-app',
+  KUBERNETES_PORT_443_TCP_PORT: '443',
+  MYSQL_SERVICE_PORT_3306_TCP_PORT: '3306',
+  MYSQL_SERVICE_SERVICE_HOST: '10.99.60.90',
+  MYSQL_SERVICE_PORT_3306_TCP_PROTO: 'tcp',
+  MEDITATION_APP_SERVICE_PORT_3000_TCP: 'tcp://10.104.179.15:3000',
+  KUBERNETES_PORT_443_TCP_PROTO: 'tcp',
+  MEDITATION_APP_SERVICE_SERVICE_HOST: '10.104.179.15',
+  npm_lifecycle_script: 'nodemon src/app.js',
+  npm_package_version: '1.0.0',
+  npm_lifecycle_event: 'devStart',
+  MYSQL_SERVICE_SERVICE_PORT: '3306',
+  MYSQL_SERVICE_PORT: 'tcp://10.99.60.90:3306',
+  MEDITATION_APP_SERVICE_SERVICE_PORT: '3000',
+  KUBERNETES_SERVICE_PORT_HTTPS: '443',
+  MEDITATION_APP_SERVICE_PORT: 'tcp://10.104.179.15:3000',
+  KUBERNETES_PORT_443_TCP: 'tcp://10.96.0.1:443',
+  MYSQL_SERVICE_PORT_3306_TCP: 'tcp://10.99.60.90:3306',
+  npm_config_globalconfig: '/usr/local/etc/npmrc',
+  npm_config_init_module: '/root/.npm-init.js',
+  KUBERNETES_SERVICE_HOST: '10.96.0.1',
+  PWD: '/usr/src/app',
+  npm_execpath: '/usr/local/lib/node_modules/npm/bin/npm-cli.js',
+  npm_config_global_prefix: '/usr/local',
+  npm_command: 'run-script',
+  DB_HOST: 'mysql-service',
+  NODE_ENV: 'kubernetes',
+  INIT_CWD: '/usr/src/app',
+  EDITOR: 'vi'
+}
+=====================================
+
+
+=== Connection Attempt ===
+Config: {
+  "host": "mysql-service",
+  "port": 3306,
+  "database": "med-app-dev",
+  "user": "root"
+}
+========================
+
+Server started on port 3000
+Add command: ClientHandshake
+ raw: 0a382e302e34300028000000364e29354a47092f00ffffff0200ffdf1500000000000000000000385d66101a08405864256207006d7973716c5f6e61746976655f70617373776f726400
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+0 undefined ==> ClientHandshake#unknown name(0,,78)
+Server hello packet: capability flags:3758096383=(long password, found rows, long flag, connect with db, no schema, compress, odbc, local files, ignore space, protocol 41, interactive, ssl, ignore sigpipe, transactions, reserved, secure connection, multi statements, multi results, ps multi results, plugin auth, connect attrs, plugin auth lenenc client data, can handle expired passwords, session track, deprecate eof, ssl verify server cert, remember options, multi factor authentication)
+Sending handshake packet: flags:280687565=(long password, long flag, connect with db, odbc, local files, ignore space, protocol 41, ignore sigpipe, transactions, reserved, secure connection, multi results, plugin auth, connect attrs, plugin auth lenenc client data, session track, multi factor authentication)
+0 40 <== ClientHandshake#unknown name(1,,146)
+0 40 <== 8e000001cdf3ba1000000000e00000000000000000000000000000000000000000000000726f6f740014e9b9981a2d74308eb11045591501fffd3ed095756d65642d6170702d646576006d7973716c5f6e61746976655f70617373776f726400310c5f636c69656e745f6e616d650c4e6f64652d4d7953514c2d320f5f636c69656e745f76657273696f6e06332e31312e35
+ raw: 00000002400000000e010c0b6d65642d6170702d646576
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+0 40 ==> ClientHandshake#unknown name(2,maybeOK,27)
+Add command: Query
+        Sending query command: SET time_zone = '+00:00'
+0 40 <== Query#unknown name(0,,29)
+0 40 <== 19000000035345542074696d655f7a6f6e65203d20272b30303a303027
+ raw: 00000002400000001300110974696d655f7a6f6e65062b30303a3030
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+0 40 ==> Query#unknown name(1,maybeOK,32)
+        Resultset header received, expecting 0 column definition packets
+Add command: Query
+        Sending query command: SELECT VERSION() as `version`
+0 40 <== Query#unknown name(0,,34)
+0 40 <== 1e0000000353454c4543542056455253494f4e2829206173206076657273696f6e60
+ raw: 011d000002
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+0 40 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 1 column definition packets
+ raw: 036465660000000776657273696f6e000ce00018000000fd01001f000005000003
+0 40 ==> Query#unknown name(2,,33)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: version
+          type: 253
+         flags: 1
+
+
+Compiled text protocol row parser:
+
+For nicer debug output consider install cardinal@^2.0.0
+(function () {
+  return class TextRow {
+    constructor(fields) {
+      const _this = this;
+      for(let i=0; i<fields.length; ++i) {
+        this[`wrap${i}`] = wrap(fields[i], _this);
+      }
+    }
+    next(packet, fields, options) {
+      this.packet = packet;
+      const result = {};
+      result["version"] = options.typeCast(this.wrap0, function() { return packet.readLengthCodedString(fields[0].encoding) });
+      return result;
+    }
+  };
+})()
+
+ raw: fe0000020007000004
+0 40 ==> Query#unknown name(3,EOF,9)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 06382e302e343005000005
+0 40 ==> Query#unknown name(4,,11)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: fe00000200
+0 40 ==> Query#unknown name(5,EOF,9)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Add command: Quit
+0 40 <== Quit#unknown name(0,,5)
+0 40 <== 0100000001
+Add command: ClientHandshake
+ raw: 0a382e302e343000290000004217017b252e647b00ffffff0200ffdf1500000000000000000000257d2834235b5d0a614c022a006d7973716c5f6e61746976655f70617373776f726400
+1 undefined ==> ClientHandshake#unknown name(0,,78)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Server hello packet: capability flags:3758096383=(long password, found rows, long flag, connect with db, no schema, compress, odbc, local files, ignore space, protocol 41, interactive, ssl, ignore sigpipe, transactions, reserved, secure connection, multi statements, multi results, ps multi results, plugin auth, connect attrs, plugin auth lenenc client data, can handle expired passwords, session track, deprecate eof, ssl verify server cert, remember options, multi factor authentication)
+Sending handshake packet: flags:280687565=(long password, long flag, connect with db, odbc, local files, ignore space, protocol 41, ignore sigpipe, transactions, reserved, secure connection, multi results, plugin auth, connect attrs, plugin auth lenenc client data, session track, multi factor authentication)
+1 41 <== ClientHandshake#unknown name(1,,146)
+1 41 <== 8e000001cdf3ba1000000000e00000000000000000000000000000000000000000000000726f6f740014956eb492cfb1e7680c9810816e546cf3e7f9a5066d65642d6170702d646576006d7973716c5f6e61746976655f70617373776f726400310c5f636c69656e745f6e616d650c4e6f64652d4d7953514c2d320f5f636c69656e745f76657273696f6e06332e31312e35
+ raw: 00000002400000000e010c0b6d65642d6170702d646576
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> ClientHandshake#unknown name(2,maybeOK,27)
+Add command: Query
+        Sending query command: SET time_zone = '+00:00'
+1 41 <== Query#unknown name(0,,29)
+1 41 <== 19000000035345542074696d655f7a6f6e65203d20272b30303a303027
+ raw: 00000002400000001300110974696d655f7a6f6e65062b30303a3030
+1 41 ==> Query#unknown name(1,maybeOK,32)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Resultset header received, expecting 0 column definition packets
+Sequelize Log: Executing (default): SELECT 1+1 AS result
+Add command: Query
+        Sending query command: SELECT 1+1 AS result
+1 41 <== Query#unknown name(0,,25)
+1 41 <== 150000000353454c45435420312b3120415320726573756c74
+ raw: 011c000002
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 1 column definition packets
+ raw: 0364656600000006726573756c74000c3f000300000008810000000005000003
+1 41 ==> Query#unknown name(2,,32)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: result
+          type: 8
+         flags: 129
+
+
+Compiled text protocol row parser:
+
+(function () {
+  return class TextRow {
+    constructor(fields) {
+      const _this = this;
+      for(let i=0; i<fields.length; ++i) {
+        this[`wrap${i}`] = wrap(fields[i], _this);
+      }
+    }
+    next(packet, fields, options) {
+      this.packet = packet;
+      const result = {};
+      result["result"] = options.typeCast(this.wrap0, function() { return packet.parseLengthCodedInt(true) });
+      return result;
+    }
+  };
+})()
+
+ raw: fe0000020002000004
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(3,EOF,9)
+ raw: 013205000005
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+1 41 ==> Query#unknown name(4,,6)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: fe00000200
+1 41 ==> Query#unknown name(5,EOF,9)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Database connected successfully
+Sequelize Log: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'users' AND TABLE_SCHEMA = 'med-app-dev'
+Add command: Query
+        Sending query command: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'users' AND TABLE_SCHEMA = 'med-app-dev'
+1 41 <== Query#unknown name(0,,143)
+1 41 <== 8b0000000353454c454354205441424c455f4e414d452046524f4d20494e464f524d4154494f4e5f534348454d412e5441424c4553205748455245205441424c455f54595045203d202742415345205441424c452720414e44205441424c455f4e414d45203d202775736572732720414e44205441424c455f534348454d41203d20276d65642d6170702d64657627
+ raw: 0148000002
+1 41 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 1 column definition packets
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 0364656612696e666f726d6174696f6e5f736368656d61065441424c4553065441424c45530a5441424c455f4e414d450a5441424c455f4e414d450ce00000010000fd815000000005000003
+1 41 ==> Query#unknown name(2,,76)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: TABLE_NAME
+          type: 253
+         flags: 20609
+
+
+Compiled text protocol row parser:
+
+(function () {
+  return class TextRow {
+    constructor(fields) {
+      const _this = this;
+      for(let i=0; i<fields.length; ++i) {
+        this[`wrap${i}`] = wrap(fields[i], _this);
+      }
+    }
+    next(packet, fields, options) {
+      this.packet = packet;
+      const result = {};
+      result["TABLE_NAME"] = options.typeCast(this.wrap0, function() { return packet.readLengthCodedString(fields[0].encoding) });
+      return result;
+    }
+  };
+})()
+
+ raw: fe0000020006000004
+1 41 ==> Query#unknown name(3,EOF,9)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 05757365727305000005
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(4,,10)
+ raw: fe00000200
+1 41 ==> Query#unknown name(5,EOF,9)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Sequelize Log: Executing (default): SHOW INDEX FROM `users`
+Add command: Query
+        Sending query command: SHOW INDEX FROM `users`
+1 41 <== Query#unknown name(0,,28)
+1 41 <== 180000000353484f5720494e4445582046524f4d2060757365727360
+ raw: 0f35000002
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+1 41 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 15 column definition packets
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 03646566000f53484f575f53544154495354494353067461626c6573055461626c65055461626c650ce00000010000fd811000000039000003
+1 41 ==> Query#unknown name(2,,57)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: Table
+          type: 253
+         flags: 4225
+ raw: 03646566000f53484f575f53544154495354494353000a4e6f6e5f756e697175650a4e6f6e5f756e697175650c3f000200000003010000000035000004
+1 41 ==> Query#unknown name(3,,61)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+        Column definition:
+          name: Non_unique
+          type: 3
+         flags: 1
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 03646566000f53484f575f5354415449535449435300084b65795f6e616d65084b65795f6e616d650ce00000010000fd00000000004f000005
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+1 41 ==> Query#unknown name(4,,57)
+        Column definition:
+          name: Key_name
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f5354415449535449435312696e6465785f636f6c756d6e5f75736167650c5365715f696e5f696e6465780c5365715f696e5f696e6465780c3f000a0000000321100000003b000006
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(5,,83)
+        Column definition:
+          name: Seq_in_index
+          type: 3
+         flags: 4129
+ raw: 03646566000f53484f575f53544154495354494353000b436f6c756d6e5f6e616d650b436f6c756d6e5f6e616d650ce00000010000fd000000000037000007
+1 41 ==> Query#unknown name(6,,63)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: Column_name
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f535441544953544943530009436f6c6c6174696f6e09436f6c6c6174696f6e0ce00004000000fd00000000003b000008
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(7,,59)
+        Column definition:
+          name: Collation
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f53544154495354494353000b43617264696e616c6974790b43617264696e616c6974790c3f001500000008000000000035000009
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(8,,63)
+        Column definition:
+          name: Cardinality
+          type: 8
+         flags: 0
+ raw: 03646566000f53484f575f5354415449535449435300085375625f70617274085375625f706172740c3f00150000000800000000001c00000a
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+1 41 ==> Query#unknown name(9,,57)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: Sub_part
+          type: 8
+         flags: 0
+ raw: 03646566000000065061636b6564000c3f00000000000680000000002d00000b
+1 41 ==> Query#unknown name(10,,32)
+        Column definition:
+          name: Packed
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+          type: 6
+         flags: 128
+ raw: 03646566000f53484f575f5354415449535449435300044e756c6c044e756c6c0ce0000c000000fd01000000003900000c
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(11,,49)
+        Column definition:
+          name: Null
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f53544154495354494353000a496e6465785f747970650a496e6465785f747970650ce0002c000000fd81000000003300000d
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+1 41 ==> Query#unknown name(12,,61)
+        Column definition:
+          name: Index_type
+          type: 253
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+         flags: 129
+ raw: 03646566000f53484f575f535441544953544943530007436f6d6d656e7407436f6d6d656e740ce00020000000fd01000000004600000e
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(13,,55)
+        Column definition:
+          name: Comment
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f5354415449535449435307696e64657865730d496e6465785f636f6d6d656e740d496e6465785f636f6d6d656e740ce00000200000fd81100000003300000f
+1 41 ==> Query#unknown name(14,,74)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: Index_comment
+          type: 253
+         flags: 4225
+ raw: 03646566000f53484f575f53544154495354494353000756697369626c650756697369626c650ce0000c000000fd010000000039000010
+1 41 ==> Query#unknown name(15,,55)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: Visible
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f53544154495354494353000a45787072657373696f6e0a45787072657373696f6e0ce000fffffffffc900000000005000011
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(16,,61)
+        Column definition:
+          name: Expression
+          type: 252
+         flags: 144
+
+
+Compiled text protocol row parser:
+
+(function () {
+  return class TextRow {
+    constructor(fields) {
+      const _this = this;
+      for(let i=0; i<fields.length; ++i) {
+        this[`wrap${i}`] = wrap(fields[i], _this);
+      }
+    }
+    next(packet, fields, options) {
+      this.packet = packet;
+      const result = {};
+      result["Table"] = options.typeCast(this.wrap0, function() { return packet.readLengthCodedString(fields[0].encoding) });
+      result["Non_unique"] = options.typeCast(this.wrap1, function() { return packet.parseLengthCodedIntNoBigCheck() });
+      result["Key_name"] = options.typeCast(this.wrap2, function() { return packet.readLengthCodedString(fields[2].encoding) });
+      result["Seq_in_index"] = options.typeCast(this.wrap3, function() { return packet.parseLengthCodedIntNoBigCheck() });
+      result["Column_name"] = options.typeCast(this.wrap4, function() { return packet.readLengthCodedString(fields[4].encoding) });
+      result["Collation"] = options.typeCast(this.wrap5, function() { return packet.readLengthCodedString(fields[5].encoding) });
+      result["Cardinality"] = options.typeCast(this.wrap6, function() { return packet.parseLengthCodedInt(true) });
+      result["Sub_part"] = options.typeCast(this.wrap7, function() { return packet.parseLengthCodedInt(true) });
+      result["Packed"] = options.typeCast(this.wrap8, function() { return packet.readLengthCodedNumber() });
+      result["Null"] = options.typeCast(this.wrap9, function() { return packet.readLengthCodedString(fields[9].encoding) });
+      result["Index_type"] = options.typeCast(this.wrap10, function() { return packet.readLengthCodedString(fields[10].encoding) });
+      result["Comment"] = options.typeCast(this.wrap11, function() { return packet.readLengthCodedString(fields[11].encoding) });
+      result["Index_comment"] = options.typeCast(this.wrap12, function() { return packet.readLengthCodedString(fields[12].encoding) });
+      result["Visible"] = options.typeCast(this.wrap13, function() { return packet.readLengthCodedString(fields[13].encoding) });
+      result["Expression"] = options.typeCast(this.wrap14, function() { return packet.readLengthCodedString(fields[14].encoding) });
+      return result;
+    }
+  };
+})()
+
+ raw: fe0000020029000012
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(17,EOF,9)
+ raw: 0575736572730130075052494d415259013102696401410130fbfb00054254524545000003594553fb30000013
+1 41 ==> Query#unknown name(18,,45)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 057573657273013008757365726e616d65013108757365726e616d6501410130fbfb00054254524545000003594553fb2a000014
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(19,,52)
+ raw: 057573657273013005656d61696c013105656d61696c01410130fbfb00054254524545000003594553fb05000015
+1 41 ==> Query#unknown name(20,,46)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: fe00000200
+1 41 ==> Query#unknown name(21,EOF,9)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Sequelize Log: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'posts' AND TABLE_SCHEMA = 'med-app-dev'
+Add command: Query
+        Sending query command: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'posts' AND TABLE_SCHEMA = 'med-app-dev'
+1 41 <== Query#unknown name(0,,143)
+1 41 <== 8b0000000353454c454354205441424c455f4e414d452046524f4d20494e464f524d4154494f4e5f534348454d412e5441424c4553205748455245205441424c455f54595045203d202742415345205441424c452720414e44205441424c455f4e414d45203d2027706f7374732720414e44205441424c455f534348454d41203d20276d65642d6170702d64657627
+ raw: 0148000002
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 1 column definition packets
+ raw: 0364656612696e666f726d6174696f6e5f736368656d61065441424c4553065441424c45530a5441424c455f4e414d450a5441424c455f4e414d450ce00000010000fd815000000005000003
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(2,,76)
+        Column definition:
+          name: TABLE_NAME
+          type: 253
+         flags: 20609
+ raw: fe0000020006000004
+1 41 ==> Query#unknown name(3,EOF,9)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+ raw: 05706f73747305000005
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+1 41 ==> Query#unknown name(4,,10)
+ raw: fe00000200
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+1 41 ==> Query#unknown name(5,EOF,9)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Sequelize Log: Executing (default): SHOW INDEX FROM `posts`
+Add command: Query
+        Sending query command: SHOW INDEX FROM `posts`
+1 41 <== Query#unknown name(0,,28)
+1 41 <== 180000000353484f5720494e4445582046524f4d2060706f73747360
+ raw: 0f35000002
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+1 41 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 15 column definition packets
+ raw: 03646566000f53484f575f53544154495354494353067461626c6573055461626c65055461626c650ce00000010000fd811000000039000003
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(2,,57)
+        Column definition:
+          name: Table
+          type: 253
+         flags: 4225
+ raw: 03646566000f53484f575f53544154495354494353000a4e6f6e5f756e697175650a4e6f6e5f756e697175650c3f000200000003010000000035000004
+1 41 ==> Query#unknown name(3,,61)
+        Column definition:
+          name: Non_unique
+          type: 3
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+         flags: 1
+ raw: 03646566000f53484f575f5354415449535449435300084b65795f6e616d65084b65795f6e616d650ce00000010000fd00000000004f000005
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(4,,57)
+        Column definition:
+          name: Key_name
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f5354415449535449435312696e6465785f636f6c756d6e5f75736167650c5365715f696e5f696e6465780c5365715f696e5f696e6465780c3f000a0000000321100000003b000006
+1 41 ==> Query#unknown name(5,,83)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: Seq_in_index
+          type: 3
+         flags: 4129
+ raw: 03646566000f53484f575f53544154495354494353000b436f6c756d6e5f6e616d650b436f6c756d6e5f6e616d650ce00000010000fd000000000037000007
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(6,,63)
+        Column definition:
+          name: Column_name
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f535441544953544943530009436f6c6c6174696f6e09436f6c6c6174696f6e0ce00004000000fd00000000003b000008
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(7,,59)
+        Column definition:
+          name: Collation
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f53544154495354494353000b43617264696e616c6974790b43617264696e616c6974790c3f001500000008000000000035000009
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(8,,63)
+        Column definition:
+          name: Cardinality
+          type: 8
+         flags: 0
+ raw: 03646566000f53484f575f5354415449535449435300085375625f70617274085375625f706172740c3f00150000000800000000001c00000a
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(9,,57)
+        Column definition:
+          name: Sub_part
+          type: 8
+         flags: 0
+ raw: 03646566000000065061636b6564000c3f00000000000680000000002d00000b
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(10,,32)
+        Column definition:
+          name: Packed
+          type: 6
+         flags: 128
+ raw: 03646566000f53484f575f5354415449535449435300044e756c6c044e756c6c0ce0000c000000fd01000000003900000c
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(11,,49)
+        Column definition:
+          name: Null
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f53544154495354494353000a496e6465785f747970650a496e6465785f747970650ce0002c000000fd81000000003300000d
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(12,,61)
+        Column definition:
+          name: Index_type
+          type: 253
+         flags: 129
+ raw: 03646566000f53484f575f535441544953544943530007436f6d6d656e7407436f6d6d656e740ce00020000000fd01000000004600000e
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(13,,55)
+        Column definition:
+          name: Comment
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f5354415449535449435307696e64657865730d496e6465785f636f6d6d656e740d496e6465785f636f6d6d656e740ce00000200000fd81100000003300000f
+1 41 ==> Query#unknown name(14,,74)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: Index_comment
+          type: 253
+         flags: 4225
+ raw: 03646566000f53484f575f53544154495354494353000756697369626c650756697369626c650ce0000c000000fd010000000039000010
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(15,,55)
+        Column definition:
+          name: Visible
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f53544154495354494353000a45787072657373696f6e0a45787072657373696f6e0ce000fffffffffc900000000005000011
+1 41 ==> Query#unknown name(16,,61)
+Trace
+        Column definition:
+          name: Expression
+          type: 252
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+         flags: 144
+ raw: fe0000020029000012
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(17,EOF,9)
+ raw: 05706f7374730130075052494d415259013102696401410130fbfb00054254524545000003594553fb2c000013
+1 41 ==> Query#unknown name(18,,45)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 05706f73747301310675736572496401310675736572496401410130fbfb00054254524545000003594553fb05000014
+1 41 ==> Query#unknown name(19,,48)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: fe00000200
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(20,EOF,9)
+Sequelize Log: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'comments' AND TABLE_SCHEMA = 'med-app-dev'
+Add command: Query
+        Sending query command: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'comments' AND TABLE_SCHEMA = 'med-app-dev'
+1 41 <== Query#unknown name(0,,146)
+1 41 <== 8e0000000353454c454354205441424c455f4e414d452046524f4d20494e464f524d4154494f4e5f534348454d412e5441424c4553205748455245205441424c455f54595045203d202742415345205441424c452720414e44205441424c455f4e414d45203d2027636f6d6d656e74732720414e44205441424c455f534348454d41203d20276d65642d6170702d64657627
+ raw: 0148000002
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 1 column definition packets
+ raw: 0364656612696e666f726d6174696f6e5f736368656d61065441424c4553065441424c45530a5441424c455f4e414d450a5441424c455f4e414d450ce00000010000fd815000000005000003
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+1 41 ==> Query#unknown name(2,,76)
+        Column definition:
+          name: TABLE_NAME
+          type: 253
+         flags: 20609
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: fe0000020009000004
+1 41 ==> Query#unknown name(3,EOF,9)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 08636f6d6d656e747305000005
+1 41 ==> Query#unknown name(4,,13)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: fe00000200
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(5,EOF,9)
+Sequelize Log: Executing (default): SHOW INDEX FROM `comments`
+Add command: Query
+        Sending query command: SHOW INDEX FROM `comments`
+1 41 <== Query#unknown name(0,,31)
+1 41 <== 1b0000000353484f5720494e4445582046524f4d2060636f6d6d656e747360
+ raw: 0f35000002
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 15 column definition packets
+ raw: 03646566000f53484f575f53544154495354494353067461626c6573055461626c65055461626c650ce00000010000fd811000000039000003
+1 41 ==> Query#unknown name(2,,57)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+        Column definition:
+          name: Table
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+          type: 253
+         flags: 4225
+ raw: 03646566000f53484f575f53544154495354494353000a4e6f6e5f756e697175650a4e6f6e5f756e697175650c3f000200000003010000000035000004
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+1 41 ==> Query#unknown name(3,,61)
+        Column definition:
+          name: Non_unique
+          type: 3
+         flags: 1
+ raw: 03646566000f53484f575f5354415449535449435300084b65795f6e616d65084b65795f6e616d650ce00000010000fd00000000004f000005
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(4,,57)
+        Column definition:
+          name: Key_name
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f5354415449535449435312696e6465785f636f6c756d6e5f75736167650c5365715f696e5f696e6465780c5365715f696e5f696e6465780c3f000a0000000321100000003b000006
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+1 41 ==> Query#unknown name(5,,83)
+        Column definition:
+          name: Seq_in_index
+          type: 3
+         flags: 4129
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 03646566000f53484f575f53544154495354494353000b436f6c756d6e5f6e616d650b436f6c756d6e5f6e616d650ce00000010000fd000000000037000007
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(6,,63)
+        Column definition:
+          name: Column_name
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f535441544953544943530009436f6c6c6174696f6e09436f6c6c6174696f6e0ce00004000000fd00000000003b000008
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(7,,59)
+        Column definition:
+          name: Collation
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f53544154495354494353000b43617264696e616c6974790b43617264696e616c6974790c3f001500000008000000000035000009
+1 41 ==> Query#unknown name(8,,63)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+        Column definition:
+          name: Cardinality
+          type: 8
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+         flags: 0
+ raw: 03646566000f53484f575f5354415449535449435300085375625f70617274085375625f706172740c3f00150000000800000000001c00000a
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+1 41 ==> Query#unknown name(9,,57)
+        Column definition:
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+          name: Sub_part
+          type: 8
+         flags: 0
+ raw: 03646566000000065061636b6564000c3f00000000000680000000002d00000b
+1 41 ==> Query#unknown name(10,,32)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: Packed
+          type: 6
+         flags: 128
+ raw: 03646566000f53484f575f5354415449535449435300044e756c6c044e756c6c0ce0000c000000fd01000000003900000c
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+1 41 ==> Query#unknown name(11,,49)
+        Column definition:
+          name: Null
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f53544154495354494353000a496e6465785f747970650a496e6465785f747970650ce0002c000000fd81000000003300000d
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(12,,61)
+        Column definition:
+          name: Index_type
+          type: 253
+         flags: 129
+ raw: 03646566000f53484f575f535441544953544943530007436f6d6d656e7407436f6d6d656e740ce00020000000fd01000000004600000e
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+1 41 ==> Query#unknown name(13,,55)
+        Column definition:
+          name: Comment
+          type: 253
+         flags: 1
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 03646566000f53484f575f5354415449535449435307696e64657865730d496e6465785f636f6d6d656e740d496e6465785f636f6d6d656e740ce00000200000fd81100000003300000f
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(14,,74)
+        Column definition:
+          name: Index_comment
+          type: 253
+         flags: 4225
+ raw: 03646566000f53484f575f53544154495354494353000756697369626c650756697369626c650ce0000c000000fd010000000039000010
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(15,,55)
+        Column definition:
+          name: Visible
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f53544154495354494353000a45787072657373696f6e0a45787072657373696f6e0ce000fffffffffc900000000005000011
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+1 41 ==> Query#unknown name(16,,61)
+        Column definition:
+          name: Expression
+          type: 252
+         flags: 144
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: fe000002002c000012
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(17,EOF,9)
+ raw: 08636f6d6d656e74730130075052494d415259013102696401410130fbfb00054254524545000003594553fb2f000013
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(18,,48)
+ raw: 08636f6d6d656e7473013106706f73744964013106706f7374496401410130fbfb00054254524545000003594553fb2f000014
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(19,,51)
+ raw: 08636f6d6d656e747301310675736572496401310675736572496401410130fbfb00054254524545000003594553fb05000015
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+1 41 ==> Query#unknown name(20,,51)
+ raw: fe00000200
+1 41 ==> Query#unknown name(21,EOF,9)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Sequelize Log: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'images' AND TABLE_SCHEMA = 'med-app-dev'
+Add command: Query
+        Sending query command: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'images' AND TABLE_SCHEMA = 'med-app-dev'
+1 41 <== Query#unknown name(0,,144)
+1 41 <== 8c0000000353454c454354205441424c455f4e414d452046524f4d20494e464f524d4154494f4e5f534348454d412e5441424c4553205748455245205441424c455f54595045203d202742415345205441424c452720414e44205441424c455f4e414d45203d2027696d616765732720414e44205441424c455f534348454d41203d20276d65642d6170702d64657627
+ raw: 0148000002
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 1 column definition packets
+ raw: 0364656612696e666f726d6174696f6e5f736368656d61065441424c4553065441424c45530a5441424c455f4e414d450a5441424c455f4e414d450ce00000010000fd815000000005000003
+1 41 ==> Query#unknown name(2,,76)
+        Column definition:
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+          name: TABLE_NAME
+          type: 253
+         flags: 20609
+ raw: fe0000020007000004
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+1 41 ==> Query#unknown name(3,EOF,9)
+ raw: 06696d6167657305000005
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(4,,11)
+ raw: fe00000200
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(5,EOF,9)
+Sequelize Log: Executing (default): SHOW INDEX FROM `images`
+Add command: Query
+        Sending query command: SHOW INDEX FROM `images`
+1 41 <== Query#unknown name(0,,29)
+1 41 <== 190000000353484f5720494e4445582046524f4d2060696d6167657360
+ raw: 0f35000002
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(1,,5)
+        Resultset header received, expecting 15 column definition packets
+ raw: 03646566000f53484f575f53544154495354494353067461626c6573055461626c65055461626c650ce00000010000fd811000000039000003
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(2,,57)
+        Column definition:
+          name: Table
+          type: 253
+         flags: 4225
+ raw: 03646566000f53484f575f53544154495354494353000a4e6f6e5f756e697175650a4e6f6e5f756e697175650c3f000200000003010000000035000004
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(3,,61)
+        Column definition:
+          name: Non_unique
+          type: 3
+         flags: 1
+ raw: 03646566000f53484f575f5354415449535449435300084b65795f6e616d65084b65795f6e616d650ce00000010000fd00000000004f000005
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(4,,57)
+        Column definition:
+          name: Key_name
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f5354415449535449435312696e6465785f636f6c756d6e5f75736167650c5365715f696e5f696e6465780c5365715f696e5f696e6465780c3f000a0000000321100000003b000006
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(5,,83)
+        Column definition:
+          name: Seq_in_index
+          type: 3
+         flags: 4129
+ raw: 03646566000f53484f575f53544154495354494353000b436f6c756d6e5f6e616d650b436f6c756d6e5f6e616d650ce00000010000fd000000000037000007
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+1 41 ==> Query#unknown name(6,,63)
+        Column definition:
+          name: Column_name
+          type: 253
+         flags: 0
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 03646566000f53484f575f535441544953544943530009436f6c6c6174696f6e09436f6c6c6174696f6e0ce00004000000fd00000000003b000008
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+1 41 ==> Query#unknown name(7,,59)
+        Column definition:
+          name: Collation
+          type: 253
+         flags: 0
+ raw: 03646566000f53484f575f53544154495354494353000b43617264696e616c6974790b43617264696e616c6974790c3f001500000008000000000035000009
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(8,,63)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+        Column definition:
+          name: Cardinality
+          type: 8
+         flags: 0
+ raw: 03646566000f53484f575f5354415449535449435300085375625f70617274085375625f706172740c3f00150000000800000000001c00000a
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(9,,57)
+        Column definition:
+          name: Sub_part
+          type: 8
+         flags: 0
+ raw: 03646566000000065061636b6564000c3f00000000000680000000002d00000b
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(10,,32)
+        Column definition:
+          name: Packed
+          type: 6
+         flags: 128
+ raw: 03646566000f53484f575f5354415449535449435300044e756c6c044e756c6c0ce0000c000000fd01000000003900000c
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(11,,49)
+        Column definition:
+          name: Null
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f53544154495354494353000a496e6465785f747970650a496e6465785f747970650ce0002c000000fd81000000003300000d
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(12,,61)
+        Column definition:
+          name: Index_type
+          type: 253
+         flags: 129
+ raw: 03646566000f53484f575f535441544953544943530007436f6d6d656e7407436f6d6d656e740ce00020000000fd01000000004600000e
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+1 41 ==> Query#unknown name(13,,55)
+        Column definition:
+          name: Comment
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f5354415449535449435307696e64657865730d496e6465785f636f6d6d656e740d496e6465785f636f6d6d656e740ce00000200000fd81100000003300000f
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+1 41 ==> Query#unknown name(14,,74)
+        Column definition:
+          name: Index_comment
+          type: 253
+         flags: 4225
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 03646566000f53484f575f53544154495354494353000756697369626c650756697369626c650ce0000c000000fd010000000039000010
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+1 41 ==> Query#unknown name(15,,55)
+        Column definition:
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+          name: Visible
+          type: 253
+         flags: 1
+ raw: 03646566000f53484f575f53544154495354494353000a45787072657373696f6e0a45787072657373696f6e0ce000fffffffffc900000000005000011
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+1 41 ==> Query#unknown name(16,,61)
+        Column definition:
+          name: Expression
+          type: 252
+         flags: 144
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: fe000002002a000012
+1 41 ==> Query#unknown name(17,EOF,9)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: 06696d616765730130075052494d415259013102696401410130fbfb00054254524545000003594553fb2d000013
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(18,,46)
+ raw: 06696d61676573013106706f73744964013106706f7374496401410130fbfb00054254524545000003594553fb05000014
+1 41 ==> Query#unknown name(19,,49)
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+ raw: fe00000200
+Trace
+    at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:429:17)
+    at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/base/connection.js:93:12)
+    at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/base/connection.js:100:25)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)
+1 41 ==> Query#unknown name(20,EOF,9)
+All models synchronized with database
+Add command: Quit
+1 41 <== Quit#unknown name(0,,5)
+1 41 <== 0100000001

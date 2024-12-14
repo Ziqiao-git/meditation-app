@@ -1,13 +1,11 @@
 // models/index.js
 const sequelize = require('../config/database');
-
-// Import all models
 const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Image = require('./Image');
 
-function setupAssociations() {
+const setupAssociations = () => {
     // User <-> Post associations
     User.hasMany(Post, {
         foreignKey: {
@@ -37,14 +35,15 @@ function setupAssociations() {
             allowNull: false
         }
     });
-    User.hasMany(Comment, {                   
+
+    // User <-> Comment associations
+    User.hasMany(Comment, {
         foreignKey: {
             name: 'userId',
             allowNull: false
         },
         onDelete: 'CASCADE'
     });
-    // User <-> Comment associations
     Comment.belongsTo(User, {
         foreignKey: {
             name: 'userId',
@@ -66,16 +65,17 @@ function setupAssociations() {
             allowNull: false
         }
     });
-}
+};
 
 // Run the associations setup
 setupAssociations();
 
-// Export everything together
 module.exports = {
     sequelize,
     User,
     Post,
     Comment,
-    Image
+    Image,
+    setupAssociations
 };
+
