@@ -4,7 +4,9 @@
   "description": "This is an app of recording meditation process",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config jest.config.js",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "devStart": "nodemon src/app.js",
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch"
@@ -44,6 +46,7 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.0.2",
     "sequelize": "^6.37.5",
+    "sqlite": "^5.1.1",
     "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   },

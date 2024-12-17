@@ -14,64 +14,80 @@ const getDbHost = () => {
     return host;
 };
 
-const sequelize = new Sequelize('med-app-dev', 'root', '005078xzq', {
-    host: getDbHost(),
-    port: 3306,
-    dialect: 'mysql',
-    logging: (msg) => console.log('Sequelize Log:', msg),
-    dialectOptions: {
-        connectTimeout: 60000,
-        socketPath: undefined,
-        debug: true
-    },
-    pool: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
+const getDbConfig = () => {
+    // For unit tests with SQLite
+    if (process.env.NODE_ENV === 'test' && process.env.DB_TYPE === 'sqlite') {
+        return {
+            dialect: 'sqlite',
+            storage: ':memory:',
+            logging: false
+        };
     }
-});
+    
+    // For integration tests with MySQL
+    if (process.env.NODE_ENV === 'test' && process.env.DB_TYPE === 'mysql') {
+        return {
+            dialect: 'mysql',
+            host: 'localhost',
+            port: 3306,
+            database: 'med-app-test',
+            username: 'root',
+            password: '005078xzq',
+            logging: false
+        };
+    }
+
+    // Default production/development config
+    return {
+        dialect: 'mysql',
+        host: getDbHost(),
+        port: 3306,
+        database: 'med-app-dev',
+        username: 'root',
+        password: '005078xzq',
+        logging: (msg) => console.log('Sequelize Log:', msg),
+        dialectOptions: {
+            connectTimeout: 60000,
+            socketPath: undefined,
+            debug: true,
+            charset: 'utf8mb4',
+            collate: 'utf8mb4_unicode_ci'
+        },
+        pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        }
+    };
+};
+
+const sequelize = new Sequelize(getDbConfig());
 
 const connectWithRetry = async (retries = 5) => {
+    if (process.env.NODE_ENV === 'unit-test') {
+        try {
+            await sequelize.authenticate();
+            console.log('Test database connected successfully');
+            const models = require('../models');
+            await sequelize.sync({ force: true });
+            console.log('Test database synchronized');
+            return;
+        } catch (err) {
+            console.error('Test database setup failed:', err);
+            throw err;
+        }
+    }
+
     for (let i = retries; i > 0; i--) {
         try {
-            const config = {
-                host: getDbHost(),
-                port: 3306,
-                database: 'med-app-dev',
-                user: 'root'
-            };
-            console.log('\n=== Connection Attempt ===');
-            console.log('Config:', JSON.stringify(config, null, 2));
-            console.log('========================\n');
-            
             await sequelize.authenticate();
             console.log('Database connected successfully');
-            
             const models = require('../models');
             await sequelize.sync({ alter: false });
             console.log('All models synchronized with database');
             return;
         } catch (err) {
-            console.log('\n=== Connection Error ===');
-            console.log('Failed to connect. Retries left:', i-1);
-            console.log('\n=== Database Connection Configuration ===');
-            console.log('NODE_ENV:', process.env.NODE_ENV);
-            console.log('DB_HOST:', process.env.DB_HOST);
-            console.log('Process Environment:', process.env);
-            console.log('=====================================\n');
-            console.log('Error Type:', err.constructor.name);
-            console.log('Error Message:', err.message);
-            console.log('Error Details:', {
-                code: err.original?.code,
-                errno: err.original?.errno,
-                syscall: err.original?.syscall,
-                address: err.original?.address,
-                port: err.original?.port,
-                hostname: err.original?.hostname
-            });
-            console.log('=====================\n');
-            
             if (i === 1) {
                 console.error('Unable to connect to the database:', err);
                 throw err;
@@ -81,6 +97,8 @@ const connectWithRetry = async (retries = 5) => {
     }
 };
 
-connectWithRetry();
+if (process.env.NODE_ENV !== 'test') {
+    connectWithRetry();
+}
 
 module.exports = sequelize;
