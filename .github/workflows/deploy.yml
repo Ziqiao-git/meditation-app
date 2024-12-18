@@ -1,0 +1,26 @@
+name: Deploy to EC2
+
+on:
+  workflow_run:
+    workflows: ["Test Suite", "Build and Push Docker Image"]
+    types:
+      - completed
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          docker pull ${{ secrets.DOCKER_USERNAME }}/meditation-app:latest
+          docker stop med-app || true
+          docker rm med-app || true
+          docker run -d --name med-app -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/meditation-app:latest
