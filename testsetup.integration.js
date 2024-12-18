@@ -19,12 +19,11 @@ const setupTestDb = async () => {
   
   const clearTestDb = async () => {
     try {
-      await Promise.all([
-        User.destroy({ where: {} }),
-        Post.destroy({ where: {} }),
-        Comment.destroy({ where: {} }),
-        Image.destroy({ where: {} })
-      ]);
+      // Delete in order of dependencies
+      await Comment.destroy({ where: {} });
+      await Image.destroy({ where: {} });
+      await Post.destroy({ where: {} });
+      await User.destroy({ where: {} });
     } catch (error) {
       console.error('Database cleanup failed:', error);
       throw error;
