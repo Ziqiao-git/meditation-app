@@ -4,9 +4,9 @@
   "description": "This is an app of recording meditation process",
   "main": "index.js",
   "scripts": {
-    "test": "jest --config jest.config.js",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test:unit": "jest --config jest.unit.config.js",
+    "test:integration": "jest --config jest.integration.config.js",
+    "test": "npm run test:unit && npm run test:integration",
     "devStart": "nodemon src/app.js",
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch"
