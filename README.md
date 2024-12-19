@@ -10,6 +10,8 @@ The Meditation App is a full-stack web application that allows users to record a
 - **Container**: Docker
 - **Orchestration**: Kubernetes
 - **Authentication**: Passport.js with Local Strategy
+- **Testing**: Jest, Supertest
+- **CI/CD**: GitHub Actions
 
 ## Project Structure
 ```
@@ -45,6 +47,19 @@ meditation-app/
 - Posts table with location support
 - Comments and Images tables with proper relationships
 - Models and associations defined in `src/models/` directory
+
+### 4. Testing Infrastructure
+- Unit tests for models and utilities
+- Integration tests for API endpoints
+- Test environment configuration
+- Separate SQLite database for testing
+- Coverage reporting
+
+### 5. CI/CD Pipeline
+- Automated testing on push and pull requests
+- Docker image building and publishing
+- Multi-architecture support (amd64/arm64)
+- Automated deployment workflow
 
 ## Development Setup
 
