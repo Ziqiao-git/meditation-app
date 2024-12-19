@@ -1,5 +1,5 @@
-# Use Node.js LTS version
-FROM node:20-slim
+# Use Node.js LTS version with specific platform
+FROM --platform=linux/arm64 node:20-slim
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --arch=arm64
 
 # Copy app source
 COPY . .
@@ -19,6 +19,7 @@ RUN mkdir -p public/uploads
 RUN ls -la /usr/src/app
 RUN ls -la /usr/src/app/views
 RUN ls -la /usr/src/app/public
+
 # Expose port
 EXPOSE 3000
 
