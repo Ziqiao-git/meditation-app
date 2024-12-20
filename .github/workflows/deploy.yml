@@ -13,14 +13,26 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     
     steps:
-    - name: Deploy to EC2
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ubuntu
-        key: ${{ secrets.EC2_SSH_KEY }}
-        script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/meditation-app:latest
-          docker stop med-app || true
-          docker rm med-app || true
-          docker run -d --name med-app -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/meditation-app:latest
+      # Step 1: Check out your code
+      - uses: actions/checkout@v3
+
+      # Step 2: Set up the kubeconfig from your secret
+      - name: Set up kubeconfig
+        run: |
+          echo "${{ secrets.KUBECONFIG_CONTENT }}" > kubeconfig
+          chmod 600 kubeconfig
+          export KUBECONFIG=$PWD/kubeconfig
+
+      # Step 3: Verify cluster access (optional but recommended)
+      # This step checks if kubectl can reach your cluster
+      - name: Verify cluster connection
+        run: kubectl get nodes
+
+      # Step 4: Deploy to Kubernetes
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f k8s/mysql-deployment.yaml
+          kubectl apply -f k8s/mysql-service.yaml
+          kubectl apply -f k8s/persistent-volumes.yaml
+          kubectl apply -f k8s/app-deployment-prod.yaml
+          kubectl apply -f k8s/app-service.yaml
