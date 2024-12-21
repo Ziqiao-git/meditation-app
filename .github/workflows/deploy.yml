@@ -29,7 +29,7 @@ jobs:
       # Step 3: Verify cluster access (optional but recommended)
       # This step checks if kubectl can reach your cluster
       - name: Verify cluster connection
-        run: kubectl get nodes
+        run: kubectl get nodes --insecure-skip-tls-verify
 
       # Step 4: Deploy to Kubernetes
       - name: Deploy to Kubernetes
