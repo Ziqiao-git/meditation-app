@@ -12,10 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
+    # This makes $KUBECONFIG available to every step in this job,
+    # so kubectl won't default to localhost:8080
+    env:
+      KUBECONFIG: ${{ github.workspace }}/kubeconfig
+
     steps:
       - uses: actions/checkout@v3
 
-      # Step 1: Provide AWS credentials so 'aws eks get-token' can work.
+      # Step 1: Provide AWS credentials so 'aws eks get-token' can work
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -26,14 +31,12 @@ jobs:
       # Step 2: Write out your kubeconfig file
       - name: Set up kubeconfig
         run: |
-          echo "${{ secrets.KUBECONFIG_CONTENT }}" > kubeconfig
-          chmod 600 kubeconfig
-          export KUBECONFIG=$PWD/kubeconfig
+          echo "${{ secrets.KUBECONFIG_CONTENT }}" > $KUBECONFIG
+          chmod 600 $KUBECONFIG
 
       # Step 3: Verify cluster connection
       - name: Verify cluster connection
-        run: |
-          kubectl get pods -A
+        run: kubectl get pods -A
 
       # Step 4: Deploy to Kubernetes
       - name: Deploy to Kubernetes
