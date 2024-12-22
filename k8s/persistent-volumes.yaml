@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mysql-pvc
 spec:
+  storageClassName: gp2-csi
   accessModes:
     - ReadWriteOnce
   resources:
@@ -14,6 +15,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: uploads-pvc
 spec:
+  storageClassName: gp2-csi
   accessModes:
     - ReadWriteOnce
   resources:
