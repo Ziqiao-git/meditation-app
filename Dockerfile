@@ -1,5 +1,5 @@
 # Use Node.js LTS version with specific platform
-FROM --platform=linux/arm64 node:20-slim
+FROM --platform=linux/amd64 node:20-slim
 
 # Create app directory
 WORKDIR /usr/src/app
