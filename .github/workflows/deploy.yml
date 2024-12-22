@@ -44,5 +44,5 @@ jobs:
           kubectl apply -f k8s/mysql-deployment.yaml
           kubectl apply -f k8s/mysql-service.yaml
           kubectl apply -f k8s/persistent-volumes.yaml
-          kubectl apply -f k8s/app-deployment-prod.yaml
+          kubectl apply -f k8s/app-development.yaml
           kubectl apply -f k8s/app-service.yaml
