@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: meditation-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: meditation-app
@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: meditation-app
-        image: meditation-app:latest
-        imagePullPolicy: IfNotPresent
+        image: docker.io/zixiucsd/meditation-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
         env:
