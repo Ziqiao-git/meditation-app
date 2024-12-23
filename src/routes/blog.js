@@ -39,9 +39,7 @@ const upload = multer({
 
 // Root route for users
 router.get("/", async (req, res) => {
-    if (!req.session.user) {
-        return res.status(401).json({ message: 'User not logged in' });
-    }
+
 
     try {
         const posts = await Post.findAll({

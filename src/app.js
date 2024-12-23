@@ -4,6 +4,7 @@ const path = require('path');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
+const { requireAuth } = require('./middleware/auth');
 
 const app = express();
 const viewsPath = path.join(__dirname, '../views');
@@ -41,9 +42,12 @@ const userRouter = require("./routes/users")
 const blogRouter = require("./routes/blog")
 const commentRouter = require("./routes/comment")
 
-app.use('/users',userRouter)
-app.use('/blog',blogRouter)
-app.use('/comment', commentRouter)
+// Protected routes
+app.use('/blog', requireAuth, blogRouter);
+
+// Public routes
+app.use('/users', userRouter);
+app.use('/comment', commentRouter);
 app.use('/dist', express.static(path.join(__dirname, 'public/dist')));
 
 app.listen(3000, () => {
