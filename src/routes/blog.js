@@ -5,6 +5,9 @@ const multer = require('multer');
 const path = require('path'); 
 const sequelize = require('../config/database'); 
 const { User, Post, Comment, Image } = require('../models')
+const { requireAuth } = require('../middleware/auth');
+
+router.use(requireAuth);
 
 // Configure multer for image upload
 const storage = multer.diskStorage({

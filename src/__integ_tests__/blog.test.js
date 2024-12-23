@@ -68,12 +68,12 @@ describe('Blog Routes Integration', () => {
       expect(Array.isArray(response.body.posts)).toBeTruthy();
     });
 
-    it('should handle unauthorized access', async () => {
+    it('should redirect to login page when not authenticated', async () => {
       const response = await request(app)
         .get('/blog')
-        .expect(401);
+        .expect(302);
 
-      expect(response.body).toHaveProperty('message', 'User not logged in');
+      expect(response.headers.location).toBe('/users/login');
     });
   });
 
