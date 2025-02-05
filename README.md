@@ -121,6 +121,9 @@ kubectl apply -f k8s/app-service.yaml
 kubectl get pods -l app=meditation-app
 kubectl port-forward service/meditation-app-service 3000:3000
 ```
+### Quick Demo video Link
+The demo gives you a quick overview of what this project is, what is the focus and how evrything works if you cannot see the my website. (Probably because the AWS charges too much)
+https://youtu.be/882FFAY7NNE
 
 ## Contributing
 1. Fork the repository
